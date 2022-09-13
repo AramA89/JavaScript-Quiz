@@ -1,32 +1,32 @@
 header {
   padding: 20px;
-  background-color: #0e488a;
+  background-color: navy;
 }
 
 h1, h3 {
-  color: seashell;
+  color: white;
   font-weight: bold;
 }
 
 .countdown {
   font-size: 15px;
-  color:seashell;
+  color:white;
 }
 
 a {
-  color: seashell;
+  color: white;
   font-size: 15px;
 }
 
 a:hover {
-  color: lightblue;
+  color: white;
 }
 
 main {
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  color: rgb(34, 34, 77);
+  color: black;
 
 }
 
@@ -48,11 +48,11 @@ main {
   border-radius: 10px;
   font-size: 18px;
   padding: 8px;
-  background-color: #ecf5ff;
+  background-color: white;
 }
 
 .btn:hover {
-  background-color: #0e488a;
+  background-color: navy;
   color: white;
 }
 
@@ -66,10 +66,10 @@ main {
 
 
 .footer {
-  color: seashell;
+  color: white;
   padding: 20px;
   border-top: 2px solid;
-  background-color:#0e488a;
+  background-color:navy;
 }
 
 .userInput {
@@ -78,5 +78,5 @@ main {
 }
 
 .userInput:focus {
-  background-color: #ecf5ff;
+  background-color: white;
 }

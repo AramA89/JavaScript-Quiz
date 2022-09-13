@@ -111,102 +111,6 @@ function updateTimer() {
      }, 1000);
 }
 
-//function to clear display and display game over when timer runs out or questions are finished
-function gameOver() {
-   timerDisplay = '';
-    var gameOver = document.createElement("p");
-    var yourScore = document.createElement("p");
-    var inputWhat = document.createElement("span");
-    var userInput = document.createElement("input");
-    var submitButton = document.createElement("button");
-
-    submitButton.classList.add("btn");
-
-     userInput.type = "text";
-     userInput.value = "";
-     userInput.classList.add("userInput");
-
-     gameOver.textContent = "Game Over!"
-     yourScore.textContent = "Your final score is: " + wins;
-     inputWhat.textContent = "Enter initials: ";
-     submitButton.innerHTML = "Submit";
-
-    gameOverScreen.appendChild(gameOver);
-    gameOverScreen.appendChild(yourScore);
-    gameOverScreen.appendChild(inputWhat);
-    gameOverScreen.appendChild(userInput); 
-    myButton.appendChild(submitButton);
-
-
-    submitButton.addEventListener("click", function (event){
-         event.preventDefault();
-         if (userInput.value.length === 0) {
-              alert("Please enter initials before submitting");
-         } else {
-
-         localStorage.setItem("name", userInput.value);
-         localStorage.setItem("score", wins);
-         window.location.href = "highscore.html";
-         }
-    });
-
-     answerOptions.remove();
-     quizBox.remove();
-}
-
-//declare all the variables needed to access all relevant HTML elements
-var theDisplay = document.querySelector("#scoreDisplay");
-var buttons = document.querySelector(".theButtons");
-
-//function to retrieve high score date from local storage, adding buttons and click events
-function renderHighScore () {
-
-   var lastHS = localStorage.getItem("score");
-   var theName = localStorage.getItem("name");
-
-    var name = document.createElement("p");
-    if (theName === null) {
-        name.textContent = "Name: ";
-    } else {
-    name.textContent = "Name: " + theName;
-    }
-    theDisplay.appendChild(name);
-
-    var score = document.createElement("p");
-
-    if (lastHS === null) {
-        score.textContent = "High Score: ";
-    } else {
-    score.textContent = "High Score: " + lastHS;
-    }
-    theDisplay.appendChild(score);
-  
-    var resetButton = document.createElement("button");
-    var clearButton = document.createElement("button");
-    resetButton.classList.add("btn");
-    clearButton.classList.add("btn");
-    resetButton.textContent = "Restart Quiz";
-    clearButton.textContent = "Clear High Score";
-
-    buttons.appendChild(resetButton);
-    buttons.appendChild(clearButton);
-
-    resetButton.addEventListener("click", function(event) { 
-     event.preventDefault();
-     window.location.href = "index.html";
-    });
-
-    clearButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        name.textContent = "Name: ";
-       score.textContent = "highScore: ";
-       localStorage.clear();
-    })
-
-}
-
-renderHighScore();
-
 //function to start quiz
 function startQuiz() {
      //start timer, remove the rules and start button created earlier
@@ -264,3 +168,99 @@ function selectAnswer (event) {
    }
 
 }
+
+//function to clear display and display game over when timer runs out or questions are finished
+function gameOver() {
+     timerDisplay = '';
+      var gameOver = document.createElement("p");
+      var yourScore = document.createElement("p");
+      var inputWhat = document.createElement("span");
+      var userInput = document.createElement("input");
+      var submitButton = document.createElement("button");
+  
+      submitButton.classList.add("btn");
+  
+       userInput.type = "text";
+       userInput.value = "";
+       userInput.classList.add("userInput");
+  
+       gameOver.textContent = "Game Over!"
+       yourScore.textContent = "Your final score is: " + wins;
+       inputWhat.textContent = "Enter initials: ";
+       submitButton.innerHTML = "Submit";
+  
+      gameOverScreen.appendChild(gameOver);
+      gameOverScreen.appendChild(yourScore);
+      gameOverScreen.appendChild(inputWhat);
+      gameOverScreen.appendChild(userInput); 
+      myButton.appendChild(submitButton);
+  
+  
+      submitButton.addEventListener("click", function (event){
+           event.preventDefault();
+           if (userInput.value.length === 0) {
+                alert("Please enter initials before submitting");
+           } else {
+  
+           localStorage.setItem("name", userInput.value);
+           localStorage.setItem("score", wins);
+           window.location.href = "index.html";
+           }
+      });
+  
+       answerOptions.remove();
+       quizBox.remove();
+  }
+
+  //declare all the variables needed to access all relevant HTML elements
+var theDisplay = document.querySelector("#scoreDisplay");
+var buttons = document.querySelector(".theButtons");
+
+//function to retrieve high score date from local storage, adding buttons and click events
+function renderHighScore () {
+
+   var lastHS = localStorage.getItem("score");
+   var theName = localStorage.getItem("name");
+
+    var name = document.createElement("p");
+    if (theName === null) {
+        name.textContent = "Name: ";
+    } else {
+    name.textContent = "Name: " + theName;
+    }
+    theDisplay.appendChild(name);
+
+    var score = document.createElement("p");
+
+    if (lastHS === null) {
+        score.textContent = "High Score: ";
+    } else {
+    score.textContent = "High Score: " + lastHS;
+    }
+    theDisplay.appendChild(score);
+  
+    var resetButton = document.createElement("button");
+    var clearButton = document.createElement("button");
+    resetButton.classList.add("btn");
+    clearButton.classList.add("btn");
+    resetButton.textContent = "Restart Quiz";
+    clearButton.textContent = "Clear High Score";
+
+    buttons.appendChild(resetButton);
+    buttons.appendChild(clearButton);
+
+    resetButton.addEventListener("click", function(event) { 
+     event.preventDefault();
+     window.location.href = "index.html";
+    });
+
+    clearButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        name.textContent = "Name: ";
+       score.textContent = "highScore: ";
+       localStorage.clear();
+    })
+
+}
+
+renderHighScore();

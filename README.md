@@ -30,7 +30,7 @@ THEN I can save my initials and my score
 
 ## MOCK-UP:
 
-
+![](assets/images/Quiz%20Screen%20Shot.jpg)
 
 ### Depolyed Webpage URL:
 
