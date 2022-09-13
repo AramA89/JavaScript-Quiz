@@ -34,10 +34,10 @@ THEN I can save my initials and my score
 
 ### Depolyed Webpage URL:
 
-
+ https://arama89.github.io/JavaScript-Quiz/
 
 ### GitHUB Repository URL:
 
-
+https://github.com/AramA89/JavaScript-Quiz
 
 ---
